@@ -65,6 +65,9 @@ function () {
     // Insert New Balance into HTML
     accountDisplayChecking.innerHTML = newBalance
   }
+  if (newBalance === '$0') {
+    accountDisplayChecking.classList.add('zero')
+  }
 })
   
 // Deposit Savings Event Listener
@@ -106,6 +109,9 @@ var initialAccValue = parseInt(accountDisplaySavings.innerHTML.split('$')[1])
 
   // Insert New Balance into HTML
   accountDisplaySavings.innerHTML = newBalance
+  }
+  if (newBalance === '$0') {
+    accountDisplaySavings.classList.add('zero')
   }
 })
 
