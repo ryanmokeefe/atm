@@ -35,6 +35,7 @@ depositChecking.addEventListener('click', function () {
   // split and convert to integer
   var initialAccValue = parseInt(accountDisplayChecking.innerHTML.split('$')[1])
 
+
   // Combine deposit with balance
   var newBalance = '$' + (initialAccValue + depositValueChecking)
   console.log(newBalance)
@@ -42,6 +43,9 @@ depositChecking.addEventListener('click', function () {
   // Insert New Balance into HTML
   accountDisplayChecking.innerHTML = newBalance
 
+  if (newBalance !== '$0') {
+    accountDisplayChecking.classList.remove('zero')
+  }
 })
 
 // checking Withdraw Event Listener
@@ -87,6 +91,9 @@ console.log(newBalance)
 
 // Insert New Balance into HTML
 accountDisplaySavings.innerHTML = newBalance
+if (newBalance !== '$0') {
+  accountDisplaySavings.classList.remove('zero')
+}
 
 })
 
